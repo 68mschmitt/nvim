@@ -71,6 +71,11 @@ return {
         config = function() require("configs.dapui") end
     },
 
+    {
+        'lewis6991/gitsigns.nvim',
+        config = require('configs.gitsigns'),
+    },
+
     -- Random Fun
     {
         'alec-gibson/nvim-tetris',
