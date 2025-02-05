@@ -76,21 +76,6 @@ return {
         config = require('configs.gitsigns'),
     },
 
-    {
-        'zbirenbaum/copilot.lua',
-        lazy = false,
-        cmd = "Copilot",
-        event = "InsertEnter",
-        config = require('configs.copilot'),
-    },
-
-    {
-        'nvim-lualine/lualine.nvim',
-        lazy = false,
-        dependencies = { 'nvim-tree/nvim-web-devicons' },
-        config = function() require("configs.lualine") end
-    },
-
     -- Random Fun
     {
         'alec-gibson/nvim-tetris',

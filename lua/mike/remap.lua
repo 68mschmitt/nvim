@@ -33,6 +33,10 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+-- Tab keymaps
+vim.keymap.set("n", "<leader>tn", "<cmd>tabnew<cr><cmd>Ex<cr>")
+vim.keymap.set("n", "<leader>te", "<cmd>tabc<cr>")
+vim.keymap.set("n", "<leader>to", "<cmd>tabo<cr>")
 
 -- Dap Keymaps
 vim.keymap.set("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>")
