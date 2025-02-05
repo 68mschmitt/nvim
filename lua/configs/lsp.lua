@@ -44,5 +44,3 @@ cmp.setup({
     },
     mapping = cmp.mapping.preset.insert({}),
 })
-
-require('configs.omnisharp')

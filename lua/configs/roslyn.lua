@@ -10,7 +10,7 @@ M.opts =
             }
         },
         filewatching = true,
-        broad_search = true,
+        broad_search = false,
         lock_target = true,
     }
 };
