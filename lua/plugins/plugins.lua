@@ -53,6 +53,11 @@ return {
 
     {
         'mfussenegger/nvim-dap',
+        lazy = false,
+        dependencies = {
+            "jay-babu/mason-nvim-dap.nvim",
+            "rcarriga/nvim-dap-ui",
+        },
         config = function() require("configs.nvim-dap") end
     },
 
@@ -60,7 +65,6 @@ return {
         'seblj/roslyn.nvim',
         lazy = true,
         ft = "cs",
-        events = { 'BufReadPre', 'BufNewFile' },
         opts = require('configs.roslyn').opts,
         init = require('configs.roslyn').init()
     },

@@ -9,7 +9,14 @@ M.opts =
                 },
             }
         },
-        filewatching = true,
+        choose_target = function(target)
+            return vim.iter(target):find(function(item)
+                if string.match(item,  "WindowsProjectsCore.sln") then
+                    return item
+                end
+            end)
+        end,
+        filewatching = false,
         broad_search = false,
         lock_target = true,
     }

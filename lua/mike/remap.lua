@@ -52,6 +52,7 @@ vim.keymap.set("n", "<Leader>B", "<cmd>lua require'dap'.set_breakpoint(vim.fn.in
 vim.keymap.set("n", "<Leader>lp", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
 vim.keymap.set("n", "<Leader>dr", "<cmd>lua require'dap'.repl.open()<CR>")
 vim.keymap.set("n", "<Leader>dl", "<cmd>lua require'dap'.run_last()<CR>")
+vim.keymap.set("n", "<Leader>dt", "<cmd>DapTerminate<CR>")
 
 vim.keymap.set("n", "<leader>acd", function() require('cmp').setup.buffer { enabled = false } end)
 vim.keymap.set("n", "<leader>ace", function() require('cmp').setup.buffer { enabled = true } end)
