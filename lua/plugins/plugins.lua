@@ -59,9 +59,14 @@ return {
     {
         'seblj/roslyn.nvim',
         lazy = true,
+        dev = true,
         ft = "cs",
         events = { 'BufReadPre', 'BufNewFile' },
-        opts = require('configs.roslyn').opts,
+        opts = {
+            filewatching = true,
+            broad_search = true,
+            lock_target = true,
+        },
         init = require('configs.roslyn').init()
     },
 
