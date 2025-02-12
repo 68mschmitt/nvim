@@ -3,7 +3,7 @@ local M = {}
 local lspconfig = require("lspconfig")
 
 -- Function to find and prompt user to select a .sln file
-M.pick_solution = function(target)
+M.pick_solution = function()
     local cwd = vim.fn.getcwd()
     local solutions = vim.fn.glob(cwd .. "/*.sln", true, true)
 

@@ -59,6 +59,8 @@ return {
         ft = "cs",
         events = { 'BufReadPre', 'BufNewFile' },
         opts = {
+            filewatching = false,
+            lock_target = true,
             config = {
                 settings = {
                     ["csharp|background_analysis"] = {
@@ -104,7 +106,7 @@ return {
     -- Random Fun
     { 'alec-gibson/nvim-tetris', config = function() require('configs.random').tetris() end },
     { 'eandrju/cellular-automaton.nvim', config = function() require('configs.random').cellular_automaton() end },
-    { 'NStefan002/donut.nvim' },
+    { 'NStefan002/donut.nvim', init = function() require('donut').setup({ timeout = 0 }) end },
     { 'tamton-aquib/duck.nvim',
         config = function()
             vim.keymap.set('n', '<leader>dd', function() require("duck").hatch() end, {})
