@@ -6,17 +6,14 @@ require('mason').setup({
             package_uninstalled = "✗"
         }
     },
-    require('mason').setup {
-        registries = {
-            'github:mason-org/mason-registry',
-            'github:crashdummyy/mason-registry',
-        },
-    }
+    registries = {
+        'github:mason-org/mason-registry',
+        'github:crashdummyy/mason-registry',
+    },
 })
+
 require('mason-lspconfig').setup({
-    -- Replace the language servers listed here
-    -- with the ones you want to install
-    ensure_installed = { 'lua_ls', 'rust_analyzer' },
+    ensure_installed = { 'lua_ls', 'rust_analyzer', 'ts_ls' },
     handlers = {
         function(server_name)
             require('lspconfig')[server_name].setup({})

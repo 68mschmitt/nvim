@@ -1,52 +1,58 @@
 local M = {}
+--M.opts =
+--{
+--    config = {
+--        settings = {
+--            ["csharp|code_lens"] = {
+--                dotnet_enable_references_code_lens = true,
+--            },
+--        }
+--    },
+--
+--    filewatching = true,
+--    broad_search = true,
+--    lock_target = true,
+--};
+
 M.opts =
 {
-    {
-        config = {
-            settings = {
-                ["csharp|code_lens"] = {
-                    dotnet_enable_references_code_lens = true,
-                },
-            }
-        },
-        filewatching = true,
-        broad_search = true,
-        lock_target = true,
-    }
-};
+    config = {
+        settings = {
+            ["csharp|background_analysis"] = {
+                dotnet_compiler_diagnostics_scope = "fullSolution"
+            },
+            ["csharp|inlay_hints"] = {
+                csharp_enable_inlay_hints_for_implicit_object_creation = true,
+                csharp_enable_inlay_hints_for_implicit_variable_types = true,
+                csharp_enable_inlay_hints_for_lambda_parameter_types = true,
+                csharp_enable_inlay_hints_for_types = true,
+                dotnet_enable_inlay_hints_for_indexer_parameters = true,
+                dotnet_enable_inlay_hints_for_literal_parameters = true,
+                dotnet_enable_inlay_hints_for_object_creation_parameters = true,
+                dotnet_enable_inlay_hints_for_other_parameters = true,
+                dotnet_enable_inlay_hints_for_parameters = true,
+                dotnet_suppress_inlay_hints_for_parameters_that_differ_only_by_suffix = true,
+                dotnet_suppress_inlay_hints_for_parameters_that_match_argument_name = true,
+                dotnet_suppress_inlay_hints_for_parameters_that_match_method_intent = true,
+            },
+            ["csharp|code_lens"] = {
+                dotnet_enable_references_code_lens = true,
+            },
+            ["csharp|symbol_search"] = {
+                dotnet_search_reference_assemplies = true,
+            },
+        }
+    },
+    exe = {
+        "dotnet",
+        vim.fs.joinpath(vim.fn.stdpath("data"), "roslyn", "Microsoft.CodeAnalysis.LanguageServer.dll"),
+    },
+}
 
-M.init = function()
-    vim.keymap.set("n", "<leader>tar", function() vim.cmd([[Roslyn target]]) end )
+function M.init()
+    vim.keymap.set("n", "<leader>tar", function() vim.cmd([[Roslyn target]]) end)
 
-    vim.keymap.set("n", "<leader>ref", function() vim.lsp.codelens.refresh() end )
-
-    vim.keymap.set("n", "<leader>ds", function()
-        if not vim.g.roslyn_nvim_selected_solution then
-            return vim.notify("No solution file found")
-        end
-
-        local projects = require("roslyn.sln.api").projects(vim.g.roslyn_nvim_selected_solution)
-        local files = vim.iter(projects)
-        :map(function(it)
-            return vim.fs.dirname(it)
-        end)
-        :totable()
-
-        local root = vim.fs.root(0, ".git") or vim.fs.dirname(vim.g.roslyn_nvim_selected_solution)
-
-        require("telescope.pickers")
-        .new({}, {
-            cwd = root,
-            prompt_title = "Find solution files",
-            finder = require("telescope.finders").new_oneshot_job(
-            vim.list_extend({ "fd", "--type", "f", "." }, files),
-            { entry_maker = require("telescope.make_entry").gen_from_file({ cwd = root }) }
-            ),
-            sorter = require("telescope.config").values.file_sorter({}),
-            previewer = require("telescope.config").values.grep_previewer({}),
-        })
-        :find()
-    end)
-end;
+    vim.keymap.set("n", "<leader>ref", function() vim.lsp.codelens.refresh() end)
+end
 
 return M;

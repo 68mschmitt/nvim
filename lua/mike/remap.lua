@@ -33,6 +33,10 @@ vim.keymap.set("n", "<C-j>", "<cmd>cprev<CR>zz")
 vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 
+-- Tab keymaps
+vim.keymap.set("n", "<leader>tn", "<cmd>.tabnew<cr><cmd>Ex<cr>")
+vim.keymap.set("n", "<leader>te", "<cmd>tabc<cr>")
+vim.keymap.set("n", "<leader>to", "<cmd>tabo<cr>")
 
 -- Dap Keymaps
 vim.keymap.set("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>")
@@ -48,3 +52,8 @@ vim.keymap.set("n", "<Leader>B", "<cmd>lua require'dap'.set_breakpoint(vim.fn.in
 vim.keymap.set("n", "<Leader>lp", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
 vim.keymap.set("n", "<Leader>dr", "<cmd>lua require'dap'.repl.open()<CR>")
 vim.keymap.set("n", "<Leader>dl", "<cmd>lua require'dap'.run_last()<CR>")
+
+vim.keymap.set("n", "<leader>acd", function() require('cmp').setup.buffer { enabled = false } end)
+vim.keymap.set("n", "<leader>ace", function() require('cmp').setup.buffer { enabled = true } end)
+
+vim.keymap.set("n", "<leader>tp", "<cmd>lua ColorMyEditor()<CR>")
