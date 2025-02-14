@@ -1,6 +1,23 @@
 vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 
-vim.keymap.set("n", "<leader>nh", "<cmd>noh<cr>")
+vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>")
+
+-- Navigate splits
+vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
+
+-- Resize splits
+vim.keymap.set("n", "<C-A-l>", ":vert res +3 <CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-A-h>", ":vert res -3 <CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-A-j>", ":res +3 <CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<C-A-k>", ":res -3 <CR>", { noremap = true, silent = true })
+
+vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
+
+vim.keymap.set("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<S-Tab>", ":bprev<CR>", { noremap = true, silent = true })
 
 -- Move a highlighted line up or down 1 line
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
