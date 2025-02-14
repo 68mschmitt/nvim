@@ -41,5 +41,3 @@ require('mason-lspconfig').setup({
         end
     },
 })
-
-vim.cmd([[ augroup _vil autocmd! autocmd BufRead,BufEnter *.vil set filetype=vil augroup end ]])
