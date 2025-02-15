@@ -76,3 +76,7 @@ vim.keymap.set("n", "<leader>acd", function() require('cmp').setup.buffer { enab
 vim.keymap.set("n", "<leader>ace", function() require('cmp').setup.buffer { enabled = true } end)
 
 vim.keymap.set("n", "<leader>tp", "<cmd>lua ColorMyEditor()<CR>")
+
+vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<cr>")
+vim.keymap.set("n", "<leader>x", ":.lua<cr>")
+vim.keymap.set("v", "<leader>x", ":lua<cr>")
