@@ -17,5 +17,9 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
-vim.treesitter.language.register('json', 'vil')
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+  pattern = "*.vil",
+  command = "set filetype=json",
+})
+
 vim.cmd([[TSUpdate]])
