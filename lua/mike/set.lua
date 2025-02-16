@@ -48,3 +48,8 @@ vim.opt.splitbelow = true
 
 -- Highlight the cursor line
 vim.opt.cursorline = true
+
+-- Set trailing white space
+-- vim.api.nvim_command(':set list listchars=trail:󱣻')
+vim.api.nvim_command(':set list listchars=trail:•,extends:⟩,precedes:⟨')
+vim.api.nvim_command(':set list showbreak=↪')

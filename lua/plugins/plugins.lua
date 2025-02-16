@@ -3,31 +3,30 @@ return {
         "folke/snacks.nvim",
         priority = 1000,
         lazy = false,
+---@diagnostic disable-next-line: undefined-doc-name
         ---@type snacks.Config
         opts = {
             picker = { enabled = true },
             dashboard = require('configs.snacks.dashboard').options(true),
+            notifier = { enabled = true, timeout = 3000 },
+            explorer = { enabled = true, replace_netrw = true, },
+            image = { enabled = true },
+            input = { enabled = true },
+            scratch = { enabled = true },
+            scroll = { enabled = true },
+            words = { enabled = true },
+            statuscolumn = { enabled = true },
 
             terminal = { enabled = false },
             bigfile = { enabled = false },
-            explorer = { enabled = false },
             indent = { enabled = false },
-            input = { enabled = false },
-            notifier = { enabled = false },
             quickfile = { enabled = false },
             scope = { enabled = false },
-            scroll = { enabled = false },
-            statuscolumn = { enabled = false },
-            words = { enabled = false },
         },
+        keys = require('configs.snacks.picker').Keys
     },
-    {
-        'nvim-telescope/telescope.nvim',
-        tag = '0.1.8',
-        lazy = false,
-        dependencies = { { 'nvim-lua/plenary.nvim' } },
-        config = function() require("configs.telescope") end
-    },
+
+    { require('configs.colors').colorschemes },
 
     { 'nvim-treesitter/nvim-treesitter', lazy = false, config = function() require("configs.treesitter") end },
 
@@ -35,7 +34,7 @@ return {
 
     { 'lewis6991/gitsigns.nvim', config = require('configs.gitsigns') },
 
-    { 'ThePrimeagen/harpoon', lazy = false, config = function() require("configs.harpoon") end },
+    { 'ThePrimeagen/harpoon', dependencies = { 'nvim-lua/plenary.nvim' }, lazy = false, config = function() require("configs.harpoon") end },
 
     { 'mbbill/undotree', lazy = false, config = function() require("configs.undotree") end },
 
