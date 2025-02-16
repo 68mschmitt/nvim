@@ -1,7 +1,5 @@
 require("mike.set")
-require("mike.remap")
+require("mike.keymaps.default")
 require("configs.colors")
 require("mike.autocmd")
-
-local helper = require('utilities.helpfull.help')
-helper.DebugLsp()
+require("mike.utils").DebugLsp(0);
