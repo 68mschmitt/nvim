@@ -41,6 +41,18 @@ vim.keymap.set("n", "<leader>tn", "<cmd>.tabnew<cr><cmd>Ex<cr>")
 vim.keymap.set("n", "<leader>te", "<cmd>tabc<cr>")
 vim.keymap.set("n", "<leader>to", "<cmd>tabo<cr>")
 
+vim.keymap.set("n", "<leader>tp", "<cmd>lua ColorMyEditor()<CR>")
+
+-- Execute lua inline
+vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<cr>")
+vim.keymap.set("n", "<leader>x", ":.lua<cr>")
+vim.keymap.set("v", "<leader>x", ":lua<cr>")
+
+-- Quick fix navigation
+vim.keymap.set("n", "<A-n>", "<cmd>cnext<cr>")
+vim.keymap.set("n", "<A-p>", "<cmd>cprev<cr>")
+vim.keymap.set("n", "<A-q>", "<cmd>cclose<cr>")
+
 -- Dap Keymaps
 -- vim.keymap.set("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>")
 -- vim.keymap.set("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>")
@@ -54,10 +66,3 @@ vim.keymap.set("n", "<leader>to", "<cmd>tabo<cr>")
 -- vim.keymap.set("n", "<Leader>lp", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
 -- vim.keymap.set("n", "<Leader>dr", "<cmd>lua require'dap'.repl.open()<CR>")
 -- vim.keymap.set("n", "<Leader>dl", "<cmd>lua require'dap'.run_last()<CR>")
-
-vim.keymap.set("n", "<leader>tp", "<cmd>lua ColorMyEditor()<CR>")
-
--- Execute lua inline
-vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<cr>")
-vim.keymap.set("n", "<leader>x", ":.lua<cr>")
-vim.keymap.set("v", "<leader>x", ":lua<cr>")
