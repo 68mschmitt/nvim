@@ -1,6 +1,6 @@
 return {
-    setup = function (client, bufnr)
-		local opts = { noremap = true, buffer = bufnr }
+    setup = function(client, bufnr)
+        local opts = { noremap = true, buffer = bufnr }
 
         vim.keymap.set('n', '<leader>k', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
         vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
@@ -11,12 +11,7 @@ return {
         vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
         vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
         vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-        vim.keymap.set({'n', 'v'}, '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-
-		if client.supports_method("textDocument/publishDiagnostics") then
-			opts.desc = "LSP: diagnostics (float)"
-			vim.keymap.set("n", "<leader>f", vim.diagnostic.open_float, opts)
-        end
+        vim.keymap.set({ 'n', 'v' }, '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
 
     end
 }

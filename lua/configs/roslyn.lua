@@ -3,16 +3,16 @@ local M = {}
 M.config =
 {
     settings = {
-        ["csharp|auto_insert"] = {
-            dotnet_enable_auto_insert = true,
-        },
+        -- ["csharp|auto_insert"] = {
+        --     dotnet_enable_auto_insert = true,
+        -- },
         ["csharp|quick_info"] = {
             dotnet_show_remarks_in_quick_info = true,
         },
-        ["csharp|type_members"] = {
-            dotnet_member_insertion_location = true,
-            dotnet_property_generation_behavior = true
-        },
+        -- ["csharp|type_members"] = {
+        --     dotnet_member_insertion_location = true,
+        --     dotnet_property_generation_behavior = true
+        -- },
         -- ["csharp|background_analysis"] = {
         --     dotnet_compiler_diagnostics_scope = "fullSolution",
             -- dotnet_analyzer_diagnostics_scope = "fullSolution"
@@ -42,9 +42,9 @@ M.config =
             dotnet_show_completion_items_from_unimported_namespaces= true,
             dotnet_show_name_completion_suggetions = true,
         },
-        ["csharp|formatting"] = {
-            dotnet_organize_imports_on_format = true,
-        }
+        -- ["csharp|formatting"] = {
+        --     dotnet_organize_imports_on_format = true,
+        -- }
     }
 }
 

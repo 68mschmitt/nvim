@@ -1,4 +1,4 @@
-vim.keymap.set("n", "<Esc>", "<cmd>noh<cr>")
+vim.api.nvim_set_keymap("n", "<Esc>", "<cmd>noh<cr>", { noremap = true, silent = true })
 
 -- Navigate splits
 vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
@@ -7,62 +7,62 @@ vim.api.nvim_set_keymap("n", "<C-j>", "<C-w>j", { noremap = true, silent = true 
 vim.api.nvim_set_keymap("n", "<C-l>", "<C-w>l", { noremap = true, silent = true })
 
 -- Resize splits
-vim.keymap.set("n", "<C-A-l>", ":vert res +3 <CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-A-h>", ":vert res -3 <CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-A-j>", ":res +3 <CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<C-A-k>", ":res -3 <CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-A-l>", ":vert res +3 <CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-A-h>", ":vert res -3 <CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-A-j>", ":res +3 <CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<C-A-k>", ":res -3 <CR>", { noremap = true, silent = true })
 
-vim.keymap.set("t", "<Esc><Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
+vim.api.nvim_set_keymap("t", "<Esc><Esc>", [[<C-\><C-n>]], { noremap = true, silent = true })
 
-vim.keymap.set("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
-vim.keymap.set("n", "<S-Tab>", ":bprev<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Tab>", ":bnext<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<S-Tab>", ":bprev<CR>", { noremap = true, silent = true })
 
 -- Move a highlighted line up or down 1 line
-vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
+vim.api.nvim_set_keymap("v", "J", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
 -- Keep cursor in place when removing the line break at the end of a line
-vim.keymap.set("n", "J", "mzJ`z")
+vim.api.nvim_set_keymap("n", "J", "mzJ`z", { noremap = true, silent = true })
 
 -- While in highlight mode, delete the highlighted text and paste the yanked text
-vim.keymap.set("x", "<leader>p", "\"_dP")
+vim.api.nvim_set_keymap("x", "<leader>p", "\"_dP", { noremap = true, silent = true })
 
 -- Delete into the void
-vim.keymap.set("n", "<leader>d", "\"_dP")
-vim.keymap.set("v", "<leader>d", "\"_dP")
+vim.api.nvim_set_keymap("n", "<leader>d", "\"_dP", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>d", "\"_dP", { noremap = true, silent = true })
 
 -- Yank into the system clipboard, awesome
-vim.keymap.set("n", "<leader>y", "\"+y")
-vim.keymap.set("v", "<leader>y", "\"+y")
-vim.keymap.set("n", "<leader>Y", "\"+Y")
+vim.api.nvim_set_keymap("n", "<leader>y", "\"+y", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>y", "\"+y", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>Y", "\"+Y", { noremap = true, silent = true })
 
 -- Tab keymaps
-vim.keymap.set("n", "<leader>tn", "<cmd>.tabnew<cr><cmd>Ex<cr>")
-vim.keymap.set("n", "<leader>te", "<cmd>tabc<cr>")
-vim.keymap.set("n", "<leader>to", "<cmd>tabo<cr>")
+vim.api.nvim_set_keymap("n", "<leader>tn", "<cmd>.tabnew<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>te", "<cmd>tabc<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>to", "<cmd>tabo<cr>", { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>tp", "<cmd>lua ColorMyEditor()<CR>")
+vim.api.nvim_set_keymap("n", "<leader>tp", "<cmd>lua ColorMyEditor()<CR>", { noremap = true, silent = true })
 
 -- Execute lua inline
-vim.keymap.set("n", "<leader><leader>x", "<cmd>source %<cr>")
-vim.keymap.set("n", "<leader>x", ":.lua<cr>")
-vim.keymap.set("v", "<leader>x", ":lua<cr>")
+vim.api.nvim_set_keymap("n", "<leader><leader>x", "<cmd>source %<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>x", ":.lua<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<leader>x", ":lua<cr>", { noremap = true, silent = true })
 
 -- Quick fix navigation
-vim.keymap.set("n", "<A-n>", "<cmd>cnext<cr>")
-vim.keymap.set("n", "<A-p>", "<cmd>cprev<cr>")
-vim.keymap.set("n", "<A-q>", "<cmd>cclose<cr>")
+vim.api.nvim_set_keymap("n", "<A-n>", "<cmd>cnext<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<A-p>", "<cmd>cprev<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<esc>", "<cmd>cclose<cr>", { noremap = true, silent = true })
 
 -- Dap Keymaps
--- vim.keymap.set("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>")
--- vim.keymap.set("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>")
--- vim.keymap.set("n", "<F9>", "<cmd>lua require'dap'.toggle_breakpoint()<CR>")
--- vim.keymap.set("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>")
--- vim.keymap.set("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>")
--- vim.keymap.set("n", "<F11>", "<cmd>lua require'dap'.step_into()<CR>")
--- vim.keymap.set("n", "<F12>", "<cmd>lua require'dap'.step_out()<CR>")
--- vim.keymap.set("n", "<Leader>b", "<cmd>lua require'dap'.toggle_breakpoint()<CR>")
--- vim.keymap.set("n", "<Leader>B", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
--- vim.keymap.set("n", "<Leader>lp", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: '))<CR>")
--- vim.keymap.set("n", "<Leader>dr", "<cmd>lua require'dap'.repl.open()<CR>")
--- vim.keymap.set("n", "<Leader>dl", "<cmd>lua require'dap'.run_last()<CR>")
+-- vim.api.nvim_set_keymap("n", "<F5>", "<cmd>lua require'dap'.continue(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<F10>", "<cmd>lua require'dap'.step_over(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<F9>", "<cmd>lua require'dap'.toggle_breakpoint(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<F5>", "<cmd>lua require'dap'.continue(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<F10>", "<cmd>lua require'dap'.step_over(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<F11>", "<cmd>lua require'dap'.step_into(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<F12>", "<cmd>lua require'dap'.step_out(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<Leader>b", "<cmd>lua require'dap'.toggle_breakpoint(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<Leader>B", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: ', { noremap = true, silent = true }), { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<Leader>lp", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: ', { noremap = true, silent = true }), { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<Leader>dr", "<cmd>lua require'dap'.repl.open(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<Leader>dl", "<cmd>lua require'dap'.run_last(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
