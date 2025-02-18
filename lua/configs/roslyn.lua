@@ -3,20 +3,9 @@ local M = {}
 M.config =
 {
     settings = {
-        -- ["csharp|auto_insert"] = {
-        --     dotnet_enable_auto_insert = true,
-        -- },
         ["csharp|quick_info"] = {
             dotnet_show_remarks_in_quick_info = true,
         },
-        -- ["csharp|type_members"] = {
-        --     dotnet_member_insertion_location = true,
-        --     dotnet_property_generation_behavior = true
-        -- },
-        -- ["csharp|background_analysis"] = {
-        --     dotnet_compiler_diagnostics_scope = "fullSolution",
-            -- dotnet_analyzer_diagnostics_scope = "fullSolution"
-        -- },
         ["csharp|inlay_hints"] = {
             csharp_enable_inlay_hints_for_implicit_object_creation = true,
             csharp_enable_inlay_hints_for_implicit_variable_types = true,
@@ -42,14 +31,13 @@ M.config =
             dotnet_show_completion_items_from_unimported_namespaces= true,
             dotnet_show_name_completion_suggetions = true,
         },
-        -- ["csharp|formatting"] = {
-        --     dotnet_organize_imports_on_format = true,
-        -- }
     }
 }
 
 M.init = function()
     local keymap = vim.keymap.set
+
+    keymap("n", "<leader>ttt", "<cmd>Roslyn target<cr>")
 
     keymap("n", "<leader>th", function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())

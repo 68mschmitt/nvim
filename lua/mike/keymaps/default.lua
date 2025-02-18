@@ -1,4 +1,4 @@
-vim.api.nvim_set_keymap("n", "<Esc>", "<cmd>noh<cr>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Esc>", "<cmd>noh<cr><cmd>cclose<cr>", { noremap = true, silent = true })
 
 -- Navigate splits
 vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
@@ -51,7 +51,7 @@ vim.api.nvim_set_keymap("v", "<leader>x", ":lua<cr>", { noremap = true, silent =
 -- Quick fix navigation
 vim.api.nvim_set_keymap("n", "<A-n>", "<cmd>cnext<cr>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<A-p>", "<cmd>cprev<cr>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<esc>", "<cmd>cclose<cr>", { noremap = true, silent = true })
+-- vim.api.nvim_set_keymap("n", "<esc>", "<cmd>cclose<cr>", { noremap = true, silent = true })
 
 -- Dap Keymaps
 -- vim.api.nvim_set_keymap("n", "<F5>", "<cmd>lua require'dap'.continue(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })

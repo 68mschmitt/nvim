@@ -1,5 +1,5 @@
 return {
-    setup = function(client, bufnr)
+    setup = function(_, bufnr)
         local opts = { noremap = true, buffer = bufnr }
 
         vim.keymap.set('n', '<leader>k', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
