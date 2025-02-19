@@ -37,7 +37,7 @@ M.config =
 M.init = function()
     local keymap = vim.keymap.set
 
-    keymap("n", "<leader>ttt", "<cmd>Roslyn target<cr>")
+    keymap("n", "<leader>tt", "<cmd>Roslyn target<cr>")
 
     keymap("n", "<leader>th", function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())

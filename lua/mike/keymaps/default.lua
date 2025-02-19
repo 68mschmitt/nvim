@@ -3,6 +3,9 @@ vim.api.nvim_set_keymap("n", "<Esc>", "<cmd>noh<cr><cmd>cclose<cr>", { noremap =
 -- QOL
 vim.api.nvim_set_keymap("n", "<C-s>", "<cmd>w<cr>", { noremap = true, silent = true })
 
+-- Nice for semi-colons while inside parenthesis
+vim.api.nvim_set_keymap("i", "<C-l>", "<C-o>a", { noremap = true, silent = true })
+
 -- Navigate splits
 vim.api.nvim_set_keymap("n", "<C-k>", "<C-w>k", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<C-h>", "<C-w>h", { noremap = true, silent = true })
