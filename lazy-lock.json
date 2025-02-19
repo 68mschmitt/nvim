@@ -1,14 +1,14 @@
 {
-<<<<<<< Updated upstream
-  "catppuccin": { "branch": "main", "commit": "c1fcef5d7a6e8dd28392c3b04150b9c42b84a40e" },
-=======
+  "beacon.nvim": { "branch": "master", "commit": "098ff96c33874339d5e61656f3050dbd587d6bd5" },
+  "blink.cmp": { "branch": "main", "commit": "18b352d12b35bca148427b607098df14b75a218f" },
   "catppuccin": { "branch": "main", "commit": "d72341852556e2dfe19f779cc682c16dd58548fc" },
->>>>>>> Stashed changes
   "cellular-automaton.nvim": { "branch": "main", "commit": "1606e9d5d04ff254023c3f3c62842d065708d6d3" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "99290b3ec1322070bcfb9e846450a46f6efa50f0" },
+  "code-playground.nvim": { "branch": "main", "commit": "7b257911268ecf7ee11d6fe806193bda2c889e86" },
   "diagflow.nvim": { "branch": "main", "commit": "9a05fda174038d349845efc70422bda4ce86b185" },
   "donut.nvim": { "branch": "main", "commit": "37364149fb32ed6fa6d1b60c6d7f55f3789fa077" },
   "duck.nvim": { "branch": "main", "commit": "d8a6b08af440e5a0e2b3b357e2f78bb1883272cd" },
+  "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
   "gitsigns.nvim": { "branch": "main", "commit": "6668f379ca634c36b8e11453118590b91bf8b295" },
   "hacker.nvim": { "branch": "main", "commit": "7cf7189f488ea3a81d4b75b44d7c38663475c7a3" },
   "harpoon": { "branch": "master", "commit": "1bc17e3e42ea3c46b33c0bbad6a880792692a1b3" },
@@ -25,13 +25,8 @@
   "nvim-treesitter": { "branch": "master", "commit": "1a6e42bb8c5c23d8e2c0acb842dcacac5ee06761" },
   "playground": { "branch": "master", "commit": "ba48c6a62a280eefb7c85725b0915e021a1a0749" },
   "plenary.nvim": { "branch": "master", "commit": "857c5ac632080dba10aae49dba902ce3abf91b35" },
-<<<<<<< Updated upstream
-  "roslyn.nvim": { "branch": "main", "commit": "3f86e52047f1697117c73d4597729b25bc06839e" },
-  "snacks.nvim": { "branch": "main", "commit": "4589e2575894090a1e62aae11cf17856f5b84ea5" },
-=======
   "roslyn.nvim": { "branch": "main", "commit": "ff6dd40e9ae7237e3dbd757af54cc93a29fc6cf8" },
   "snacks.nvim": { "branch": "main", "commit": "aaed4a94111ddfd9d23cdecb01e4ae53030c2c3e" },
->>>>>>> Stashed changes
   "undotree": { "branch": "master", "commit": "2556c6800b210b2096b55b66e74b4cc1d9ebbe4f" },
   "vim-fugitive": { "branch": "master", "commit": "b068eaf1e6cbe35d1ac100d435cd7f7b74a5c87d" }
 }
