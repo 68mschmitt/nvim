@@ -76,6 +76,17 @@ return {
         config = require('configs.gitsigns'),
     },
 
+    {
+        "dgagn/diagflow.nvim",
+        enabled = true,
+        config = function()
+            require('diagflow').setup({
+                scope = 'line',
+                show_borders = true,
+            })
+        end,
+    },
+
     -- Random Fun
     { 'alec-gibson/nvim-tetris', config = function() require('configs.random').tetris() end },
     { 'eandrju/cellular-automaton.nvim', config = function() require('configs.random').cellular_automaton() end },
