@@ -16,8 +16,8 @@ return {
             scroll = { enabled = true },
             words = { enabled = true },
             statuscolumn = { enabled = true },
+            terminal = { enabled = true },
 
-            terminal = { enabled = false },
             bigfile = { enabled = false },
             indent = { enabled = false },
             quickfile = { enabled = false },
@@ -110,6 +110,18 @@ return {
         "GustavEikaas/code-playground.nvim",
         config = function()
             require("code-playground").setup()
+        end
+    },
+
+    {
+        "norcalli/nvim-colorizer.lua",
+        enabled = not vim.g.is_perf,
+        event = "BufRead",
+        config = function()
+            require("colorizer").setup({ "*" }, {
+                names = false,        -- "Name" codes like Blue
+                mode  = 'background', -- Set the display mode.
+            })
         end
     },
 
