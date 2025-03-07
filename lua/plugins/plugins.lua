@@ -27,6 +27,23 @@ return {
         init = require('configs.snacks')
     },
 
+    {
+        'echasnovski/mini.tabline',
+        lazy = false,
+        init = function()
+            require('mini.tabline').setup()
+        end,
+        dependencies = { 'echasnovski/mini.icons' }
+    },
+
+    {
+        'echasnovski/mini.statusline', version = false,
+        lazy = false,
+        init = function()
+            require('mini.statusline').setup()
+        end
+    },
+
     { require('configs.colors').colorschemes },
 
     {
