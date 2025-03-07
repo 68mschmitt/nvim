@@ -42,15 +42,6 @@ return {
     { 'lewis6991/gitsigns.nvim',             config = require('configs.gitsigns') },
 
     {
-        'ThePrimeagen/harpoon',
-        dependencies = { 'nvim-lua/plenary.nvim' },
-        lazy = false,
-        config = function()
-            require("configs.harpoon")
-        end
-    },
-
-    {
         'mbbill/undotree',
         lazy = false,
         config = function()
@@ -121,6 +112,7 @@ return {
             require('diagflow').setup({
                 scope = 'line',
                 show_borders = true,
+                placement = "top",
             })
         end,
     },
