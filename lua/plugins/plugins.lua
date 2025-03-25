@@ -104,7 +104,7 @@ return {
         ft = "cs",
         events = { 'BufReadPre', 'BufNewFile' },
         opts = {
-            filewatching = false,
+            filewatching = roslyn,
             lock_target = true,
             config = require('configs.roslyn').config,
         },

@@ -13,13 +13,6 @@ autocmd("FileType", {
     command = "compiler dotnet",
 })
 
-autocmd("FileType", {
-    desc = 'Prevent auto comment when starting new insertion while on a commented line',
-    group = augroups.mike,
-    pattern = '*',
-    command = "set formatoptions-=o",
-})
-
 autocmd("LspAttach", {
     desc = "LSP options and keymaps",
     group = augroups.lsp.attach,
@@ -38,37 +31,37 @@ autocmd("LspAttach", {
             })
         end
 
-        -- if client.supports_method("textDocument/documentHighlight") then
-        --     autocmd({ "CursorHold", "CursorHoldI" }, {
-        --         buffer = event.buf,
-        --         group = augroups.lsp.highlight,
-        --         callback = vim.lsp.buf.document_highlight,
-        --     })
-        --
-        --     autocmd({ "CursorMoved", "CursorMovedI" }, {
-        --         buffer = event.buf,
-        --         group = augroups.lsp.highlight,
-        --         callback = vim.lsp.buf.clear_references,
-        --     })
-        --
-        --     autocmd("LspDetach", {
-        --         group = augroups.lsp.detach,
-        --         buffer = event.buf,
-        --         callback = function(ev)
-        --             vim.lsp.buf.clear_references()
-        --             vim.api.nvim_clear_autocmds({ group = "UserLspHighlight", buffer = ev.buf })
-        --         end,
-        --     })
-        -- end
+        if client.supports_method("textDocument/documentHighlight") then
+            autocmd({ "CursorHold", "CursorHoldI" }, {
+                buffer = event.buf,
+                group = augroups.lsp.highlight,
+                callback = vim.lsp.buf.document_highlight,
+            })
 
-        -- if client.supports_method("textDocument/formatting") then
-        --     autocmd("BufWritePre", {
-        --         buffer = event.buf,
-        --         group = augroups.lsp.efm,
-        --         callback = function(_)
-        --             vim.lsp.buf.format({ async = true })
-        --         end,
-        --     })
-        -- end
+            autocmd({ "CursorMoved", "CursorMovedI" }, {
+                buffer = event.buf,
+                group = augroups.lsp.highlight,
+                callback = vim.lsp.buf.clear_references,
+            })
+
+            autocmd("LspDetach", {
+                group = augroups.lsp.detach,
+                buffer = event.buf,
+                callback = function(ev)
+                    vim.lsp.buf.clear_references()
+                    vim.api.nvim_clear_autocmds({ group = "UserLspHighlight", buffer = ev.buf })
+                end,
+            })
+        end
+
+        if client.supports_method("textDocument/formatting") then
+            autocmd("BufWritePre", {
+                buffer = event.buf,
+                group = augroups.lsp.efm,
+                callback = function(_)
+                    vim.lsp.buf.format({ async = true })
+                end,
+            })
+        end
     end,
 })

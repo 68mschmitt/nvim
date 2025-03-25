@@ -61,6 +61,9 @@ vim.api.nvim_set_keymap("n", "<A-n>", "<cmd>cnext<cr>", { noremap = true, silent
 vim.api.nvim_set_keymap("n", "<A-p>", "<cmd>cprev<cr>", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "<esc>", "<cmd>cclose<cr>", { noremap = true, silent = true })
 
+-- Close a buffer
+vim.api.nvim_set_keymap("n", "<leader>cb", "<cmd>bdel!<cr>", { noremap = true, silent = true })
+
 -- Dap Keymaps
 -- vim.api.nvim_set_keymap("n", "<F5>", "<cmd>lua require'dap'.continue(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
 -- vim.api.nvim_set_keymap("n", "<F10>", "<cmd>lua require'dap'.step_over(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
