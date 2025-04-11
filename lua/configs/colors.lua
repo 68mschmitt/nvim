@@ -11,7 +11,7 @@ M.colorschemes = {
         lazy = false,
         priority = 1000,
         config = function()
-            vim.cmd([[colorscheme industry]])
+            vim.cmd([[colorscheme elflord]])
         end
     },
     { "catppuccin/nvim", name = "catppuccin" },

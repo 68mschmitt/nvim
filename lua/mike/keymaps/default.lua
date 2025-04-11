@@ -1,3 +1,5 @@
+vim.api.nvim_set_keymap("n", "<C-t>", "<C-p>", { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap("n", "<Esc>", "<cmd>noh<cr><cmd>cclose<cr>", { noremap = true, silent = true })
 
 -- QOL
