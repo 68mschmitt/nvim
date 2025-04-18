@@ -29,11 +29,6 @@ vim.opt.updatetime = 50
 
 vim.g.mapleader = " "
 
--- fold
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldenable = false
-
 -- preview substitutions live
 vim.opt.inccommand = "split"
 
@@ -45,8 +40,3 @@ vim.opt.timeoutlen = 300
 -- split windows
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-
--- Set trailing white space
--- vim.api.nvim_command(':set list listchars=trail:󱣻')
-vim.api.nvim_command(':set list listchars=trail:•,extends:⟩,precedes:⟨')
-vim.api.nvim_command(':set list showbreak=↪')
