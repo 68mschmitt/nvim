@@ -29,7 +29,7 @@ return {
 
     {
         'echasnovski/mini.tabline',
-        lazy = false,
+        lazy = true,
         init = function()
             require('mini.tabline').setup()
         end,
@@ -37,8 +37,9 @@ return {
     },
 
     {
-        'echasnovski/mini.statusline', version = false,
-        lazy = false,
+        'echasnovski/mini.statusline',
+        version = false,
+        lazy = true,
         init = function()
             require('mini.statusline').setup()
         end
@@ -48,7 +49,7 @@ return {
 
     {
         'nvim-treesitter/nvim-treesitter',
-        lazy = false,
+        lazy = true,
         config = function()
             require("configs.treesitter")
         end
@@ -56,11 +57,14 @@ return {
 
     { 'nvim-treesitter/playground' },
 
-    { 'lewis6991/gitsigns.nvim',             config = require('configs.gitsigns') },
+    {
+        'lewis6991/gitsigns.nvim',
+        config = require('configs.gitsigns')
+    },
 
     {
         'mbbill/undotree',
-        lazy = false,
+        lazy = true,
         config = function()
             require("configs.undotree")
         end
@@ -74,9 +78,15 @@ return {
         end
     },
 
-    { 'hrsh7th/nvim-cmp',     lazy = false },
+    {
+        'hrsh7th/nvim-cmp',
+        lazy = true
+    },
 
-    { 'hrsh7th/cmp-nvim-lsp', lazy = false },
+    {
+        'hrsh7th/cmp-nvim-lsp',
+        lazy = true
+    },
 
     {
         'williamboman/mason.nvim',
@@ -88,15 +98,21 @@ return {
 
     {
         'neovim/nvim-lspconfig',
-        lazy = false,
+        lazy = true,
         config = function()
             require('configs.lsp')
         end
     },
 
-    { 'williamboman/mason-lspconfig.nvim', lazy = false },
+    {
+        'williamboman/mason-lspconfig.nvim',
+        lazy = true
+    },
 
-    { 'mfussenegger/nvim-dap',             config = function() require("configs.nvim-dap") end },
+    {
+        'mfussenegger/nvim-dap',
+        config = function() require("configs.nvim-dap") end
+    },
 
     {
         'seblj/roslyn.nvim',
@@ -104,7 +120,7 @@ return {
         ft = "cs",
         events = { 'BufReadPre', 'BufNewFile' },
         opts = {
-            filewatching = roslyn,
+            filewatching = "roslyn",
             lock_target = true,
             config = require('configs.roslyn').config,
         },
@@ -173,21 +189,27 @@ return {
     },
 
     -- Random Fun
-    { 'alec-gibson/nvim-tetris',         config = function() require('configs.random').tetris() end },
-    { 'eandrju/cellular-automaton.nvim', config = function() require('configs.random').cellular_automaton() end },
-    { 'NStefan002/donut.nvim',           init = function() require('donut').setup({ timeout = 0 }) end },
     {
-        'tamton-aquib/duck.nvim',
-        config = function()
-            vim.keymap.set('n', '<leader>dd', function() require("duck").hatch() end, {})
-            vim.keymap.set('n', '<leader>dk', function() require("duck").cook() end, {})
-            vim.keymap.set('n', '<leader>da', function() require("duck").cook_all() end, {})
-        end
+        'alec-gibson/nvim-tetris',
+        lazy = true,
+        config = function() require('configs.random').tetris() end
     },
     {
-        "letieu/hacker.nvim",
+        'eandrju/cellular-automaton.nvim',
+        lazy = false,
+        config = function() require('configs.random').cellular_automaton() end
     },
     {
-        'NStefan002/donut.nvim'
+        'NStefan002/donut.nvim',
+        lazy = true,
+        init = function() require('donut').setup({ timeout = 0 }) end
+    },
+
+    -- Personal Plugins
+    {
+        '68mschmitt/my_quote.nvim',
+        lazy = false,
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        config = { function() require("my_quote").setup({ site = "zenquotes" }) end }
     },
 }

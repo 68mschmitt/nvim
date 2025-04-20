@@ -28,7 +28,7 @@ M.config =
         },
         ["csharp|completion"] = {
             dotnet_provide_regex_completions = true,
-            dotnet_show_completion_items_from_unimported_namespaces= true,
+            dotnet_show_completion_items_from_unimported_namespaces = true,
             dotnet_show_name_completion_suggetions = true,
         },
     }
@@ -42,21 +42,6 @@ M.init = function()
     keymap("n", "<leader>th", function()
         vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
     end, { desc = "Toggle inlay hints" })
-
-    keymap("n", "<leader>ds", function()
-        if not vim.g.roslyn_nvim_selected_solution then
-            return vim.notify("No solution file found")
-        end
-
-        local projects = require("roslyn.sln.api").projects(vim.g.roslyn_nvim_selected_solution)
-        local files = vim.iter(projects)
-        :map(function(it)
-            return vim.fs.dirname(it)
-        end)
-        :totable()
-
-        Snacks.picker.files({ dirs = files })
-    end)
 end
 
 return M;
