@@ -7,6 +7,7 @@
   "code-playground.nvim": { "branch": "main", "commit": "b57abbaadc52c3d79e06c19dad0212774111a796" },
   "diagflow.nvim": { "branch": "main", "commit": "b13321b517ff64bf42eeac2214085d3c76d83a0d" },
   "donut.nvim": { "branch": "main", "commit": "37364149fb32ed6fa6d1b60c6d7f55f3789fa077" },
+  "flexoki": { "branch": "main", "commit": "975654bce67514114db89373539621cff42befb5" },
   "friendly-snippets": { "branch": "main", "commit": "fc8f183479a472df60aa86f00e295462f2308178" },
   "gitsigns.nvim": { "branch": "main", "commit": "2149fc2009d1117d58e86e56836f70c969f60a82" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },

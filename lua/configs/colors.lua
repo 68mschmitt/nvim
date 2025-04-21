@@ -6,8 +6,9 @@ function ColorMyEditor()
 end
 
 M.colorschemes = {
-    { "EdenEast/nightfox.nvim", name = "nightfox"  },
-    { "catppuccin/nvim", name = "catppuccin" },
+    { "EdenEast/nightfox.nvim", name = "nightfox" },
+    { "catppuccin/nvim",        name = "catppuccin" },
+    { "kepano/flexoki-neovim",  name = "flexoki" },
 }
 
 return M
