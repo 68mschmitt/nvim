@@ -49,7 +49,7 @@ return {
 
     {
         'nvim-treesitter/nvim-treesitter',
-        lazy = true,
+        lazy = false,
         config = function()
             require("configs.treesitter")
         end
@@ -64,7 +64,7 @@ return {
 
     {
         'mbbill/undotree',
-        lazy = true,
+        lazy = false,
         config = function()
             require("configs.undotree")
         end
@@ -98,7 +98,7 @@ return {
 
     {
         'neovim/nvim-lspconfig',
-        lazy = true,
+        lazy = false,
         config = function()
             require('configs.lsp')
         end
@@ -106,12 +106,7 @@ return {
 
     {
         'williamboman/mason-lspconfig.nvim',
-        lazy = true
-    },
-
-    {
-        'mfussenegger/nvim-dap',
-        config = function() require("configs.nvim-dap") end
+        lazy = false
     },
 
     {
@@ -131,6 +126,11 @@ return {
         'rcarriga/nvim-dap-ui',
         dependencies = { 'mfussenegger/nvim-dap', 'nvim-neotest/nvim-nio' },
         config = function() require("configs.dapui") end
+    },
+
+    {
+        'mfussenegger/nvim-dap',
+        config = function() require("configs.nvim-dap") end
     },
 
     {

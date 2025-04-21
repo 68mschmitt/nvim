@@ -6,14 +6,7 @@ function ColorMyEditor()
 end
 
 M.colorschemes = {
-    {
-        "EdenEast/nightfox.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.cmd([[colorscheme elflord]])
-        end
-    },
+    { "EdenEast/nightfox.nvim", name = "nightfox"  },
     { "catppuccin/nvim", name = "catppuccin" },
 }
 
