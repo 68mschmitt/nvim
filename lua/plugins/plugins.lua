@@ -6,10 +6,10 @@ return {
         ---@diagnostic disable-next-line: undefined-doc-name
         ---@type snacks.Config
         opts = {
-            picker = { enabled = true },
+            picker = { enabled = true, sources = { explorer = { layout = { layout = { position = "right" } } } } },
             dashboard = require('configs.snacks.dashboard').options(true),
             notifier = { enabled = true, timeout = 3000 },
-            explorer = { enabled = true, replace_netrw = true, },
+            explorer = { enabled = true, replace_netrw = true },
             image = { enabled = true },
             input = { enabled = true },
             scratch = { enabled = true },
