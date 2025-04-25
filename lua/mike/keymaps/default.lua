@@ -67,15 +67,30 @@ vim.api.nvim_set_keymap("n", "<A-p>", "<cmd>cprev<cr>", { noremap = true, silent
 vim.api.nvim_set_keymap("n", "<leader>cb", "<cmd>bdel!<cr>", { noremap = true, silent = true })
 
 -- Dap Keymaps
--- vim.api.nvim_set_keymap("n", "<F5>", "<cmd>lua require'dap'.continue(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<F10>", "<cmd>lua require'dap'.step_over(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<F9>", "<cmd>lua require'dap'.toggle_breakpoint(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<F5>", "<cmd>lua require'dap'.continue(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<F10>", "<cmd>lua require'dap'.step_over(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<F11>", "<cmd>lua require'dap'.step_into(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<F12>", "<cmd>lua require'dap'.step_out(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<Leader>b", "<cmd>lua require'dap'.toggle_breakpoint(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<Leader>B", "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: ', { noremap = true, silent = true }), { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<Leader>lp", "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: ', { noremap = true, silent = true }), { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<Leader>dr", "<cmd>lua require'dap'.repl.open(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
--- vim.api.nvim_set_keymap("n", "<Leader>dl", "<cmd>lua require'dap'.run_last(, { noremap = true, silent = true })<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>",
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>",
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<F9>", "<cmd>lua require'dap'.toggle_breakpoint()<CR>",
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<F5>", "<cmd>lua require'dap'.continue()<CR>",
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<F10>", "<cmd>lua require'dap'.step_over()<CR>",
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<F11>", "<cmd>lua require'dap'.step_into()<CR>",
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<F12>", "<cmd>lua require'dap'.step_out()<CR>",
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>b",
+    "<cmd>lua require('dap').toggle_breakpoint()<CR>",
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>B",
+    "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: ', { noremap = true, silent = true }), { noremap = true, silent = true })<CR>",
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>lp",
+    "<cmd>lua require'dap'.set_breakpoint(nil, nil, vim.fn.input('Log point message: ', { noremap = true, silent = true }), { noremap = true, silent = true })<CR>",
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>dr", "<cmd>lua require'dap'.repl.open()<CR>",
+    { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<Leader>dl", "<cmd>lua require'dap'.run_last()<CR>",
+    { noremap = true, silent = true })
