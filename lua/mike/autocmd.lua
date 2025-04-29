@@ -54,14 +54,14 @@ autocmd("LspAttach", {
             })
         end
 
-        if client.supports_method("textDocument/formatting") then
-            autocmd("BufWritePre", {
-                buffer = event.buf,
-                group = augroups.lsp.efm,
-                callback = function(_)
-                    vim.lsp.buf.format({ async = true })
-                end,
-            })
-        end
+        -- if client.supports_method("textDocument/formatting") then
+        --     autocmd("BufWritePre", {
+        --         buffer = event.buf,
+        --         group = augroups.lsp.efm,
+        --         callback = function(_)
+        --             vim.lsp.buf.format({ async = true })
+        --         end,
+        --     })
+        -- end
     end,
 })
