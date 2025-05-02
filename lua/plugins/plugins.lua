@@ -59,6 +59,7 @@ return {
 
     {
         'lewis6991/gitsigns.nvim',
+        lazy = true,
         config = require('configs.gitsigns')
     },
 
@@ -120,6 +121,15 @@ return {
             config = require('configs.roslyn').config,
         },
         init = require('configs.roslyn').init()
+    },
+
+    -- lazy.nvim
+    {
+        "GustavEikaas/easy-dotnet.nvim",
+        dependencies = { "nvim-lua/plenary.nvim", 'nvim-telescope/telescope.nvim', },
+        config = function()
+            require("easy-dotnet").setup()
+        end
     },
 
     {
@@ -191,7 +201,7 @@ return {
     -- Random Fun
     {
         'alec-gibson/nvim-tetris',
-        lazy = true,
+        lazy = false,
         config = function() require('configs.random').tetris() end
     },
     {
@@ -201,7 +211,7 @@ return {
     },
     {
         'NStefan002/donut.nvim',
-        lazy = true,
+        lazy = false,
         init = function() require('donut').setup({ timeout = 0 }) end
     },
 
