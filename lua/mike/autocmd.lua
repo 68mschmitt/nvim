@@ -1,21 +1,43 @@
 local autocmd = vim.api.nvim_create_autocmd
-local augroups = require('mike.utils').augroups
+
+local group = vim.api.nvim_create_augroup("MikeAuGroup", { clear = true })
 
 autocmd('TextYankPost', {
     desc = 'Highlight when yanking (copying) text',
-    group = augroups.yank,
-    callback = function() require("vim.highlight").on_yank({ higroup = "Substitute", timeout = 200 }) end,
+    group = group,
+    callback = function() require("vim.hl").on_yank({ higroup = "Substitute", timeout = 200 }) end,
 })
 
 autocmd("FileType", {
-    group = augroups.mike,
+    group = group,
     pattern = "cs",
     command = "compiler dotnet",
 })
 
+autocmd("FileType", {
+    group = group,
+    pattern = "*",
+    command = "set formatoptions-=o"
+})
+
+autocmd("FileType", {
+    group = group,
+    pattern = { "text", "tex", "markdown", "md" },
+    callback = function()
+        if vim.bo.buftype ~= "nofile" then
+            vim.wo[0][0].spell = true
+        end
+    end
+})
+
+vim.api.nvim_create_autocmd({ "BufNewFile", "BufRead" }, {
+    pattern = "*.vil",
+    command = "set filetype=json",
+})
+
 autocmd("LspAttach", {
     desc = "LSP options and keymaps",
-    group = augroups.lsp.attach,
+    group = group,
     callback = function(event)
         local id = vim.tbl_get(event, "data", "client_id")
         local client = id and vim.lsp.get_client_by_id(id)
@@ -34,18 +56,18 @@ autocmd("LspAttach", {
         if client.supports_method("textDocument/documentHighlight") then
             autocmd({ "CursorHold", "CursorHoldI" }, {
                 buffer = event.buf,
-                group = augroups.lsp.highlight,
+                group = group,
                 callback = vim.lsp.buf.document_highlight,
             })
 
             autocmd({ "CursorMoved", "CursorMovedI" }, {
                 buffer = event.buf,
-                group = augroups.lsp.highlight,
+                group = group,
                 callback = vim.lsp.buf.clear_references,
             })
 
             autocmd("LspDetach", {
-                group = augroups.lsp.detach,
+                group = group,
                 buffer = event.buf,
                 callback = function(ev)
                     vim.lsp.buf.clear_references()
@@ -57,7 +79,7 @@ autocmd("LspAttach", {
         -- if client.supports_method("textDocument/formatting") then
         --     autocmd("BufWritePre", {
         --         buffer = event.buf,
-        --         group = augroups.lsp.efm,
+        --         group = group,
         --         callback = function(_)
         --             vim.lsp.buf.format({ async = true })
         --         end,
