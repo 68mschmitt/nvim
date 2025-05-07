@@ -3,10 +3,7 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     opts = {
         filewatching = "off",
-        broad_search = true,
-        ignore_target = function(sln)
-            return string.match(sln, "SmartDok.sln") ~= nil
-        end,
+        -- broad_search = true,
         settings = {
             ["csharp|quick_info"] = {
                 dotnet_show_remarks_in_quick_info = true,

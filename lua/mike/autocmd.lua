@@ -71,7 +71,7 @@ autocmd("LspAttach", {
                 buffer = event.buf,
                 callback = function(ev)
                     vim.lsp.buf.clear_references()
-                    vim.api.nvim_clear_autocmds({ group = "UserLspHighlight", buffer = ev.buf })
+                    vim.api.nvim_clear_autocmds({ group = group, buffer = ev.buf })
                 end,
             })
         end
