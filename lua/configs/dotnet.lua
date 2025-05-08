@@ -5,6 +5,10 @@ return {
         filewatching = "off",
         -- broad_search = true,
         settings = {
+            ["csharp|background_analysis"] = {
+                dotnet_analyzer_diagnostics_scope = "fullSolution",
+                dotnet_compiler_diagnostics_scope = "fullSolution",
+            },
             ["csharp|quick_info"] = {
                 dotnet_show_remarks_in_quick_info = true,
             },
