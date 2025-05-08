@@ -7,12 +7,7 @@ return {
             ensure_installed = { "regex", "javascript", "typescript", "c_sharp", "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "json" },
 
             -- Install parsers synchronously (only applied to `ensure_installed`)
-            sync_install = function()
-                if(_G.IS_WINDOWS) then
-                    return true
-                end
-                return false
-            end,
+            sync_install = true,
 
             -- Automatically install missing parsers when entering buffer
             -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
@@ -23,20 +18,6 @@ return {
                 additional_vim_regex_highlighting = false,
             },
         },
-        config = function()
-            local uname = vim.loop.os_uname()
-
-            _G.OS = uname.sysname
-            _G.IS_MAC = OS == 'Darwin'
-            _G.IS_LINUX = OS == 'Linux'
-            _G.IS_WINDOWS = OS:find 'Windows' and true or false
-            _G.IS_WSL = IS_LINUX and uname.release:find 'Microsoft' and true or false
-
-            if(_G.IS_WINDOWS) then
-                require('nvim-treesitter.install').compilers = { 'zig' }
-            end
-
-        end
     },
     { 'nvim-treesitter/playground' },
 }

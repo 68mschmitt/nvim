@@ -15,11 +15,11 @@ return {
             vim.keymap.set("n", "<leader>gol", function() vim.cmd([[CellularAutomaton game_of_life]]) end )
         end
     },
-    {
-        'NStefan002/donut.nvim',
-        lazy = false,
-        init = function()
-            vim.keymap.set("n", "<leader>tet", function() vim.cmd([[Tetris]]) end )
-        end
-    },
+    -- {
+    --     'NStefan002/donut.nvim',
+    --     lazy = false,
+    --     init = function()
+    --         vim.keymap.set("n", "<leader>tet", function() vim.cmd([[Tetris]]) end )
+    --     end
+    -- },
 }

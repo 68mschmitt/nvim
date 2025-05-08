@@ -24,7 +24,15 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         dependencies = {
             { "neovim/nvim-lspconfig" },
-            { "mason-org/mason.nvim", opts = {}, cmd = "Mason", dependencies = { "roslyn.nvim" } },
+            { "mason-org/mason.nvim", opts = 
+            {
+
+                registries = {
+                    "github:mason-org/mason-registry",
+                    "github:Crashdummyy/mason-registry",
+                },
+            },
+            cmd = "Mason", dependencies = { "roslyn.nvim" } },
         },
     },
     { "seblyng/nvim-lsp-extras" },
