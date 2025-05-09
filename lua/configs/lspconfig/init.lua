@@ -17,22 +17,29 @@ vim.diagnostic.config({
     },
 })
 
-return {
+return
+{
     {
         "mason-org/mason-lspconfig.nvim",
-        opts = { handlers = { vim.lsp.enable } },
+        opts = { 
+            handlers = { vim.lsp.enable },
+        },
         event = { "BufReadPre", "BufNewFile" },
-        dependencies = {
+        dependencies =
+        {
             { "neovim/nvim-lspconfig" },
-            { "mason-org/mason.nvim", opts = 
             {
-
-                registries = {
-                    "github:mason-org/mason-registry",
-                    "github:Crashdummyy/mason-registry",
+                "mason-org/mason.nvim",
+                opts = 
+                {
+                    registries = {
+                        "github:mason-org/mason-registry",
+                        "github:Crashdummyy/mason-registry",
+                    },
                 },
+                cmd = "Mason",
+                dependencies = { "roslyn.nvim" }
             },
-            cmd = "Mason", dependencies = { "roslyn.nvim" } },
         },
     },
     { "seblyng/nvim-lsp-extras" },
@@ -41,8 +48,10 @@ return {
     {
         "folke/lazydev.nvim",
         ft = "lua",
-        opts = {
-            library = {
+        opts =
+        {
+            library =
+            {
                 { path = "${3rd}/luv/library", words = { "vim%.uv" } },
                 { path = "${3rd}/busted/library" },
                 { path = "${3rd}/luassert/library" },
@@ -50,5 +59,17 @@ return {
                 { path = "nvim-test" },
             },
         },
+    },
+    {
+        "WhoIsSethDaniel/mason-tool-installer.nvim",
+        opts = {
+            ensure_installed = {
+                "prettier",
+                "roslyn",
+                "lua_ls",
+                "clangd",
+                "rust-analyzer",
+            }
+        }
     },
 }
