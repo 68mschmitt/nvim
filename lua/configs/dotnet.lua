@@ -2,8 +2,9 @@ return {
     "seblyng/roslyn.nvim",
     event = { "BufReadPre", "BufNewFile" },
     opts = {
-        filewatching = "off",
-        -- broad_search = true,
+        filewatching = "roslyn",
+        lock_target = true,
+        broad_search = true,
         settings = {
             ["csharp|background_analysis"] = {
                 dotnet_analyzer_diagnostics_scope = "fullSolution",
