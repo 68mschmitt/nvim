@@ -6,7 +6,14 @@ return {
     ---@type snacks.Config
     opts = {
         animate = { enabled = true },
-        picker = { enabled = true, sources = { explorer = { layout = { layout = { position = "right" } } } } },
+        picker = { enabled = true, sources =
+        {
+            explorer = { ignored = true, hidden = true, layout = { layout = { position = "right" } } } },
+            files = { ignored = true, hidden = true },
+            grep = { ignored = true, hidden = true },
+            grep_word = { ignored = true, hidden = true },
+            grep_buffers = { ignored = true, hidden = true }
+        },
         dashboard = require('configs.snacks.dashboard').options(true),
         notifier = { enabled = true, timeout = 3000 },
         notify = { enabled = true },
