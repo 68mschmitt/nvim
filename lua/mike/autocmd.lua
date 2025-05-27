@@ -46,14 +46,14 @@ autocmd("LspAttach", {
 
         require("mike.keymaps.lsp").setup(client, event.buf)
 
-        if client.supports_method("textDocument/codeLens") then
+        if client:supports_method("textDocument/codeLens") then
             autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
                 buffer = event.buf,
                 callback = function(ev) vim.lsp.codelens.refresh({ bufnr = ev.buf }) end,
             })
         end
 
-        if client.supports_method("textDocument/documentHighlight") then
+        if client:supports_method("textDocument/documentHighlight") then
             autocmd({ "CursorHold", "CursorHoldI" }, {
                 buffer = event.buf,
                 group = group,
@@ -75,15 +75,5 @@ autocmd("LspAttach", {
                 end,
             })
         end
-
-        -- if client.supports_method("textDocument/formatting") then
-        --     autocmd("BufWritePre", {
-        --         buffer = event.buf,
-        --         group = group,
-        --         callback = function(_)
-        --             vim.lsp.buf.format({ async = true })
-        --         end,
-        --     })
-        -- end
     end,
 })
