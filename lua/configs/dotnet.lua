@@ -24,7 +24,7 @@ return {
 
         vim.lsp.config("roslyn", {
             on_attach = function()
-                print("This will run when the server attaches!")
+                print("Welcome to dotnet")
             end,
             settings = {
                 ["csharp|quick_info"] = {
