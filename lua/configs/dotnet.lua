@@ -24,7 +24,7 @@ return {
 
         vim.lsp.config("roslyn", {
             on_attach = function()
-                print("Welcome to dotnet")
+                print("Roslyn Starting")
             end,
             settings = {
                 ["csharp|quick_info"] = {
