@@ -1,7 +1,6 @@
-require("mike.globals")
 require("mike.options")
 require("mike.keymaps")
 require('mike.lazy')
 require("mike.autocmd")
 require("mike.statusline")
-vim.cmd([[colorscheme slate]])
+vim.cmd([[colorscheme carbonfox]])
