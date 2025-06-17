@@ -1,9 +1,13 @@
+local utils = require("mike.utils");
+
 return {
     {
         'nvim-treesitter/nvim-treesitter',
         build = ":TSUpdate",
         config = function()
-            require('nvim-treesitter.install').compilers = {"zig"}
+            if utils.isWindows() then
+                require('nvim-treesitter.install').compilers = {"zig"}
+            end
             require('nvim-treesitter.configs').setup({
                 -- A list of parser names, or "all" (the listed parsers MUST always be installed)
                 ensure_installed = { "regex", "javascript", "typescript", "c_sharp", "c", "lua", "vim", "vimdoc", "query", "markdown", "markdown_inline", "json" },
