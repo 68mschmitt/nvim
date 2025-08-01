@@ -14,6 +14,7 @@ return {
     picker = {
         name = "snacks.pick"
     },
+    legacy_commands = false,
   },
   init = function()
       vim.opt.conceallevel = 1
