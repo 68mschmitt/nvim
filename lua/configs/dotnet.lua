@@ -5,13 +5,7 @@ return {
         filewatching = "roslyn",
         lock_target = true,
         broad_search = false,
-        choose_target = function(target)
-            return vim.iter(target):find(function(item)
-                if string.match(item, "WindowsProjectsCore.sln") then
-                    return item
-                end
-            end)
-        end
+        choose_target = nil,
     },
     init = function()
         local keymap = vim.keymap.set
