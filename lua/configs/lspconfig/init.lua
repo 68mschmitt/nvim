@@ -50,7 +50,6 @@ return
                 "roslyn",
                 "lua_ls",
                 "clangd",
-                "rust-analyzer",
             },
             auto_update = true,
         }
