@@ -50,6 +50,8 @@ return
                 "roslyn",
                 "lua_ls",
                 "clangd",
+                "gopls",
+                "ts_ls",
             },
             auto_update = true,
         }
