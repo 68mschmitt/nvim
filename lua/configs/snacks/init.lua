@@ -6,7 +6,8 @@ return {
     ---@type snacks.Config
     opts = {
         animate = { enabled = true },
-        picker = { enabled = true, sources =
+        picker = { enabled = true,
+        ui_select = true, sources =
         {
             explorer = { ignored = true, hidden = true, layout = { layout = { position = "right" } } } },
             files = { ignored = true, hidden = true },
